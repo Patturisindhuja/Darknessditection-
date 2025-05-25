@@ -1,0 +1,19 @@
+int  ldrpin = A0;
+int ledpin = 3;//pwm
+
+int ldrValue = 0;
+int ledbright =0;
+
+void setup (){
+  pinMode(ledpin, OUTPUT);
+  pinMode(ldrpin,INPUT);
+
+}
+
+void loop(){
+ int ldrvalue = analogRead(ldrpin);
+ int brightness = map(ldrvalue,0,1023,255,0);// drak to bright // 
+ analogWrite(ledpin,brightness);
+ delay(500);
+
+}
